@@ -115,9 +115,21 @@ ul.dropdown-menu li a:hover {
     color: #f2994a;
     border-bottom: 1px solid #f2994a;
 }
-.header-top {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
+
+.header-top-search{
+	border: #ffffff81 1px solid;
+	outline: none;
+	background: rgba(12, 12, 12, 0.363);
+    padding: 10px 15px 10px 25px;
+	border-radius: 20px;
+	color: white;
+	width: 100%;
+}
+.top-left p i{
+	position: absolute;
+	top: -33px;
+	left: 1070px;
+	color: gray;
 }
 .navbar{
 	padding: 0;
@@ -132,9 +144,7 @@ ul.dropdown-menu li a:hover {
     color: #f2994a;
 	margin-right: 10px;
 }
-.top-right {
-    text-align: right;
-}
+
 /*-- /slider --*/
 
 /*-- banner-top --*/
@@ -2711,6 +2721,6 @@ img.zoom-img{
 	.subscribe-grid h5 {
 		font-size: 15px;
 	}
-}}
+}
 
 /*-- //Responsive Design --*/
