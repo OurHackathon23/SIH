@@ -119,7 +119,7 @@ ul.dropdown-menu li a:hover {
 .header-top-search{
 	border: #ffffff81 1px solid;
 	outline: none;
-	background: rgba(12, 12, 12, 0.363);
+	background: rgba(12, 12, 12, 0.51);
     padding: 10px 15px 10px 25px;
 	border-radius: 20px;
 	color: white;
@@ -127,7 +127,7 @@ ul.dropdown-menu li a:hover {
 }
 .top-left p i{
 	position: absolute;
-	top: -33px;
+	top: -43px;
 	left: 1070px;
 	color: gray;
 }
@@ -2722,13 +2722,11 @@ img.zoom-img{
 		font-size: 15px;
 	}
 }
-<<<<<<< HEAD
+
 .atag{
 	background-color: #FFFFFF;
 	border-radius: 0%;
 }
-=======
->>>>>>> 67e6b3eb3ea04beced7bb2926a630dce5d0a2c86
 
 /*-- //Responsive Design --*/
 
