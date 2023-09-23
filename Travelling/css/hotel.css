@@ -44,7 +44,8 @@
     
 }
 .d_h2{
-    padding-left: 30px;
+    padding-left: 50px;
+    padding-top: 20px;
 }
 .book{
     background-color: red;
@@ -57,13 +58,14 @@
     margin-top: 68px;
     
 }
-.search{
+.t_search{
     width:74px;
     height: 35px;
     background-color: rgba(255, 153, 0, 0.632);
     border-radius: 10px;
     margin-left: -10px;
     margin-top: 23px;
+    outline: none;
 
 }
 .clear{
@@ -72,6 +74,9 @@
     background-color: rgba(255, 153, 0, 0.632);
     border-radius: 10px;
     margin-top: 23px;
+    border:2px solid black;
+    color: #000000;
+    padding-top: 3px;
 
 }
 
@@ -84,18 +89,20 @@
 .popup {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+   
+    top: -10px;
+    left: 0px;
+    width: 150%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
     overflow-y: scroll;
+   
 }
 
 .popup-content {
     background-color: #fff;
-    max-width: 400px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     position: absolute;
@@ -104,6 +111,7 @@
     transform: translate(-50%, -50%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
+    
 }
 .close {
     position: absolute;
@@ -128,7 +136,7 @@ form textarea {
     border-radius: 5px;
 }
 
-form input[type="submit"] {
+.f_submit{
     background-color: #007BFF;
     color: #fff;
     padding: 10px 20px;
