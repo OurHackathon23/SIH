@@ -3,5 +3,5 @@ $conn = mysqli_connect("localhost", "root", "", "hotel") or die("Connection fail
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+}   
 ?>
