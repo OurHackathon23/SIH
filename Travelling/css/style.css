@@ -935,7 +935,7 @@ section.middle-sec-agileinfo-w3ls h3.heading{
 	-o-transform: rotate(15deg) scale(1.4);
 	-moz-transform: rotate(15deg) scale(1.4);
 	-webkit-transform: rotate(15deg) scale(1.4);
-	transform: rotate(15deg) scale(1.4);
+	transform: rotate(15deg) scale(1.7);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 	-moz-transition: .3s ease-in-out;
@@ -943,13 +943,14 @@ section.middle-sec-agileinfo-w3ls h3.heading{
 	-ms-transition: .3s ease-in-out;
 }
 
-.hover06 figure:hover img,
+.hover06  figure:hover img,
 .w3_agile_services_grid:hover .hover06 figure img {
-	-webkit-transform: rotate(0) scale(1);
-	transform: rotate(0) scale(1);
+	-webkit-transform: rotate(0) scale(1.5);
+	transform: rotate(0) scale(1.5);
 	-moz-transform: rotate(0) scale(1);
 	-o-transform: rotate(0) scale(1);
 	-ms-transform: rotate(0) scale(1);
+	
 }
 
 .agile_services_grid {
