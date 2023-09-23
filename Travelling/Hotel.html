@@ -48,6 +48,7 @@ u
 	href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext"
 	rel="stylesheet">
 <!-- //web-fonts -->
+<link rel="stylesheet" href="css/hotel.css"/>
 
 </head>
 <body>
@@ -161,24 +162,138 @@ u
 	</div>
 </div>
 
-<main>
-    <section class="search-form">
-        <h2>Find the Perfect Hotel</h2>
-        <form>
-            <label for="location">Destination:</label>
-            <input type="text" id="location" name="location" placeholder="Enter a destination">
-            <label for="check-in">Check-in:</label>
-            <input type="date" id="check-in" name="check-in">
-            <label for="check-out">Check-out:</label>
-            <input type="date" id="check-out" name="check-out">
-            <label for="guests">Guests:</label>
-            <input type="number" id="guests" name="guests" min="1" value="1">
-            <label for="rooms">Rooms:</label>
-            <input type="number" id="rooms" name="rooms" min="1" value="1">
-            <button type="submit">Search</button>
-        </form>
-    </section>
-</main>
+
+<form>
+	<div class="top_panel">
+		
+		<div class="t_content"><span class="t_span">location</span> <div><input type="text" id="location" placeholder="location" class="box"></div></div>
+		<div class="t_content"><span class="t_span">Check In</span><div><input type="text" id="check-in" placeholder="time of check in" class="box"></div></div>
+		<div class="t_content"><span class="t_span">Check Out</span><div><input type="text" id="check-out" placeholder="time of check out" class="box"></div></div>
+		<div class="t_content"><span class="t_span">guests & rooms</span> <div><input type="text" id="location" placeholder="members & rooms"class="box"></div></div>
+		<div><input type="submit" id="search-button"class="search" value="Search" ></div>
+		<div><input type="reset" id="clear"class="clear" value="clear"></div>
+	</div>
+</form>
+<ol><li>
+
+
+	<div class="h_data">
+		<img class="hotel1" src="images/h1.jpg"/> 
+		<div class="h_content"><h2 class="d_h2"> Hotel roopa </h2>
+
+			<button class="book" id="openPopup">book</button>
+    <div id="popupContainer" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Please fill details</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+				<label for="name">Mobile no :</label>
+                <input type="number" id="mem" name="mobileNumber" required>
+				<label for="mem">Members</label>
+                <input type="number" id="mem" name="guestNumber" required>
+				<label for="room">Rooms>
+                <input type="number" id="room" name="roomsNumber" required>
+				<label for="in">check in time:</label>
+                <input type="date" id="in" name="CheckInTime" required>
+				<label for="out">check in time:</label>
+                <input type="date" id="out" name="CheckOutTime" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <input type="submit" value="confirm">
+            </form>
+               </div>
+           </div>
+                             <script>
+               				const openPopupButton = document.getElementById("openPopup");
+               const closePopupButton = document.getElementById("closePopup");
+               const popupContainer = document.getElementById("popupContainer");
+               
+               openPopupButton.addEventListener("click", () => {
+                   popupContainer.style.display = "block";
+               });
+               
+               closePopupButton.addEventListener("click", () => {
+                   popupContainer.style.display = "none";
+               });
+			</script>
+		</div>
+	</div>
+            
+            
+            
+
+
+
+
+
+
+</li></ol>
+<script>
+	// Replace 'YOUR_API_KEY' with your actual Google Maps API key
+	const apiKey = 'YOUR_API_KEY';
+
+	// Function to fetch hotels based on location and dates
+	function searchHotels() {
+		const locationInput = document.getElementById('location');
+		const checkInInput = document.getElementById('check-in');
+		const checkOutInput = document.getElementById('check-out');
+		const hotelList = document.getElementById('hotel-list');
+
+		// Get user input values
+		const location = locationInput.value;
+		const checkInDate = checkInInput.value;
+		const checkOutDate = checkOutInput.value;
+
+		// You can use the Google Places API to search for hotels based on location.
+		// This is a simplified example without actual API calls.
+		// Replace this with your actual API implementation.
+		const hotels = [
+			{ name: 'Hotel A', location: 'Location A', checkIn: '2023-09-23', checkOut: '2023-09-25' },
+			{ name: 'Hotel B', location: 'Location B', checkIn: '2023-09-24', checkOut: '2023-09-26' },
+			{ name: 'Hotel C', location: 'Location C', checkIn: '2023-09-26', checkOut: '2023-09-28' },
+		];
+
+		// Clear the previous results
+		hotelList.innerHTML = 'clear';
+
+		// Filter hotels based on location and check-in/check-out dates
+		const filteredHotels = hotels.filter(hotel => {
+			return hotel.location.toLowerCase().includes(location.toLowerCase()) &&
+				hotel.checkIn <= checkInDate &&
+				hotel.checkOut >= checkOutDate;
+		});
+
+		// Display hotel data
+		filteredHotels.forEach(hotel => {
+			const hotelItem = document.createElement('li');
+			hotelItem.textContent = `${hotel.name} - ${hotel.location}`;
+			hotelList.appendChild(hotelItem);
+		});
+	}
+
+	// Attach the search function to the button click event
+	const searchButton = document.getElementById('search-button');
+	searchButton.addEventListener('click', searchHotels);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- footer -->
 <footer class="py-5">
