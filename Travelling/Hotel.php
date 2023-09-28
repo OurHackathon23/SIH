@@ -170,11 +170,11 @@ u
 		<div class="t_content"><span class="t_span">Check In</span><div><input type="text" id="check-in" placeholder="time of check in" class="box"></div></div>
 		<div class="t_content"><span class="t_span">Check Out</span><div><input type="text" id="check-out" placeholder="time of check out" class="box"></div></div>
 		<div class="t_content"><span class="t_span">guests & rooms</span> <div><input type="text" id="location" placeholder="members & rooms"class="box"></div></div>
-		<div><input type="submit" id="search-button"class="search" value="Search" ></div>
-		<div><input type="reset" id="clear"class="clear" value="clear"></div>
+		<div><input type="submit" id="search-button"class="t_search" value="Search" ></div>
+		<button type="reset" class="clear" id="clear">clear</button>
 	</div>
 </form>
-<ol><li>
+<ul><li>
 
 
 	<div class="h_data">
@@ -182,11 +182,37 @@ u
 		<div class="h_content"><h2 class="d_h2"> Hotel roopa </h2>
 
 			<button class="book" id="openPopup">book</button>
-    <div id="popupContainer" class="popup">
+        </div>
+	</div></li><li>
+	<div class="h_data">
+		<img class="hotel1" src="images/h1.jpg"/> 
+		<div class="h_content"><h2 class="d_h2"> Hotel roopa </h2>
+
+			<button class="book" id="openPopup">book</button>
+    
+                             
+		</div>
+	</div></li>
+
+
+	
+            
+            
+            
+
+
+
+
+
+
+</ul>
+
+
+<div id="popupContainer" class="popup">
         <div class="popup-content">
             <span class="close" id="closePopup">&times;</span>
             <h2>Please fill details</h2>
-            <form action="#" method="POST">
+            <form method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -204,11 +230,11 @@ u
                 <input type="date" id="out" name="CheckOutTime" required>
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
-                <input type="submit" value="confirm">
+                <input class="f_submit" type="submit" value="confirm" name="submit">
             </form>
                </div>
            </div>
-                             <script>
+	<script>
                				const openPopupButton = document.getElementById("openPopup");
                const closePopupButton = document.getElementById("closePopup");
                const popupContainer = document.getElementById("popupContainer");
@@ -221,18 +247,9 @@ u
                    popupContainer.style.display = "none";
                });
 			</script>
-		</div>
-	</div>
-            
-            
-            
 
 
 
-
-
-
-</li></ol>
 <script>
 	// Replace 'YOUR_API_KEY' with your actual Google Maps API key
 	const apiKey = 'YOUR_API_KEY';
@@ -280,17 +297,6 @@ u
 	const searchButton = document.getElementById('search-button');
 	searchButton.addEventListener('click', searchHotels);
 </script>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -399,3 +405,25 @@ u
 <!-- //js-scripts -->
 
 </html>
+<?php
+include('conn.php');
+
+if(isset($_POST['submit']))
+{
+$name = $_POST['name'];
+$mobileNumber = $_POST['mobileNumber'];
+$email = $_POST['email'];
+$guestNumber = $_POST['guestNumber'];
+$roomsNumber = $_POST['roomsNumber'];
+$checkInTime = $_POST['checkInTime'];
+$checkOutTime = $_POST['checkOutTime'];
+
+// SQL query to insert data into the table
+$sql = "INSERT INTO book (name,mobileNumber, email, guestNumber, roomsNumber, checkInTime, checkOutTime) 
+        VALUES ('$name','$mobileNumber', '$email', '$guestNumber', '$roomsNumber', '$checkInTime', '$checkOutTime')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Data inserted successfully";
+} 
+}
+?>

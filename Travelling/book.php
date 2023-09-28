@@ -1,9 +1,7 @@
 <?php
 
-if (isset($_POST['BOOK']))
+if(isset($_POST['submit']))
 {
-// Data from the form
-
 $name = $_POST['name'];
 $mobileNumber = $_POST['mobileNumber'];
 $email = $_POST['email'];
